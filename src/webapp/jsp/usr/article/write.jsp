@@ -23,7 +23,7 @@ function Article__submitForm(form){
 }
 </script>
 
-<form onsubmit = "Article__submitForm(this); return false;">
+<form method = "POST" onsubmit = "Article__submitForm(this); return false;">
 
 
     <div>

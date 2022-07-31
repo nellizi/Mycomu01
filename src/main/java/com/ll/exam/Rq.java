@@ -54,15 +54,32 @@ public class Rq {
         req.setAttribute(name, value);
     }
 
-    public void view(String path)  {
-        RequestDispatcher requestDispatcher = req.getRequestDispatcher("/jsp/"+path+".jsp");
+    public void view(String path) {
+        RequestDispatcher requestDispatcher = req.getRequestDispatcher("/jsp/" + path + ".jsp");
         try {
-            requestDispatcher.forward(req,resp);
+            requestDispatcher.forward(req, resp);
         } catch (ServletException e) {
             throw new RuntimeException(e);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
 
+    }
+
+    public String getMethod() {
+        return req.getMethod();
+    }
+
+    public String getPath() {
+        return req.getRequestURI();
+    }
+
+    public String getParam(String paramName, String defaultValue) {
+        String value = req.getParameter(paramName);
+
+        if (value == null || value.trim().length() == 0) {
+            return defaultValue;
+        }
+        return value;
     }
 }
