@@ -22,4 +22,8 @@ public class ArticlerService {
 
         return articleRepository.findAll();
     }
+
+    public ArticleDto findById(long id) {
+        return articleRepository.findById(id);
+    }
 }

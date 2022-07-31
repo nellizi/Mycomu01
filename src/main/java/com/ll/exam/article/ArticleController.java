@@ -37,4 +37,14 @@ public class ArticleController {
 
 
     }
+
+    public void showdetail(Rq rq) {
+        long id = 1;
+
+        ArticleDto articleDto = articlerService.findById(id);
+
+        rq.setAttr("article", articleDto);
+        rq.view("usr/article/detail");
+
+    }
 }
