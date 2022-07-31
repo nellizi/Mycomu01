@@ -19,6 +19,7 @@ public class DispatchServlet extends HttpServlet {
         MemberController memberController = new MemberController();
         ArticleController articleController = new ArticleController();
 
+        //쿼리스트링 가져오기
         String url = req.getRequestURI();
 
         switch (url){
