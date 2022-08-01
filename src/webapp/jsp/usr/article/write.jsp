@@ -7,7 +7,7 @@
 function Article__submitForm(form){
     form.title.value = form.title.value.trim();
     if(form.title.value.length ==0 ){
-        alter('제목을 입력해주세요');
+        alert('제목을 입력해주세요');
         form.title.focus();
         return;
     }
@@ -15,7 +15,7 @@ function Article__submitForm(form){
     form.body.value = form.body.value.trim();
 
     if(form.body.value.length ==0 ){
-        alter('내용을 입력해주세요');
+        alert('내용을 입력해주세요');
         form.body.focus();
         return;
     }
@@ -29,14 +29,14 @@ function Article__submitForm(form){
     <div>
         <span>제목</span>
         <div>
-            <input name="title" Type = "text" maxlength = "50" placeholder="제목을 입력해주세요"/>
+            <input name="title" type="text" maxlength="50" placeholder="제목을 입력해주세요"/>
         </div>
     </div>
 
     <div>
         <span>내용</span>
         <div>
-            <input name="body" Type = "text" maxlength = "300" placeholder="내용을 입력해주세요"/>
+            <input name="body" type="text" maxlength="300" placeholder="내용을 입력해주세요"/>
         </div>
     </div>
 
